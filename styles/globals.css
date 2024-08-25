@@ -18,10 +18,23 @@
 
 body {
   background-color: rgb(69 69 69);
+  color: white;
 }
 
 .header {
   background-color: rgb(122 122 122);
+}
+
+select {
+  background-color: rgb(69 69 69);
+}
+
+textarea {
+  background-color: rgb(122 122 122);
+}
+
+.button {
+  background-color: rgb(240 160 8);
 }
 
 @layer utilities {
