@@ -17,6 +17,7 @@
 }
 
 body {
+  min-height: 100vh;
   background-color: rgb(69 69 69);
   color: white;
 }
@@ -35,6 +36,10 @@ textarea {
 
 .button {
   background-color: rgb(240 160 8);
+}
+
+.backbutton {
+  background-color: rgb(122 122 122);
 }
 
 @layer utilities {

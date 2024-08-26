@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { useState } from "react";
 import Link from "next/link";
 import Header from "./Header";
+import Footer from "./Footer";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,7 +29,7 @@ export default function Home() {
   return (
     <>
       <Header />
-      <div>
+      <div className="h-screen">
         <div className="text-center mt-5 mx-auto">
           <h2>【ご意見・ご要望】</h2>
           <p className="p-4">
@@ -84,9 +85,7 @@ export default function Home() {
             </div>
           </div>
         </form>
-        <Link href={"/privacypolicy"} type="submit" className="text-slate-400	">
-          プライバシーポリシー
-        </Link>
+        <Footer />
       </div>
     </>
   );
