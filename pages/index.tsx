@@ -27,7 +27,7 @@ export default function Home() {
   };
 
   return (
-    <>
+    <div className="max-h-screen overflow-hidden">
       <Header />
       <div className="h-screen">
         <div className="text-center mt-5 mx-auto">
@@ -87,7 +87,7 @@ export default function Home() {
         </form>
         <Footer />
       </div>
-    </>
+    </div>
   );
 }
 

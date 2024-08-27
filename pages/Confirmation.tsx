@@ -18,10 +18,13 @@ const Confirmation = () => {
     <div className="max-h-screen h-screen overflow-hidden">
       <Header />
       <div className="h-screen flex justify-center items-center">
-        <div>
+        <div className="w-10/12">
           <div className="bg-slate-600 p-5">
-            <p>問合せ内容：{content}</p>
-            <p>{comment}</p>
+            <p className="border-b-2">問合せ内容：{content}</p>
+            <div className="my-3">
+              <p>本文：</p>
+              <p>{comment}</p>
+            </div>
           </div>
           <div className="flex flex-col">
             <button
