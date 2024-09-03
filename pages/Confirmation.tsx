@@ -8,10 +8,24 @@ const Confirmation = () => {
   const comment = router.query.comment;
   const content = router.query.content;
 
-  const submit = () => {
+  const submit = async () => {
     console.log("click");
     console.log(comment);
     console.log(content);
+
+    try {
+      const res = await fetch("http://127.0.0.1:5000/post/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ comment, content }),
+      });
+
+      console.log(res);
+    } catch (error) {
+      console.error("Error during fetch:", error);
+    }
   };
 
   return (
