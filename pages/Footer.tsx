@@ -3,7 +3,7 @@ import Link from "next/link";
 
 function Footer() {
   return (
-    <Link href={"/privacypolicy"} type="submit" className="text-slate-400	">
+    <Link href={"/privacypolicy"} type="submit" className="text-slate-400">
       プライバシーポリシー
     </Link>
   );

@@ -38,7 +38,7 @@ export default function Home() {
         </div>
         <form
           onSubmit={(e) => postAction(e, comment, content)}
-          className="flex justify-center items-center my-20"
+          className="flex justify-center items-center my-10"
         >
           <div className="ml-5 mr-5 w-screen">
             <div className="flex">

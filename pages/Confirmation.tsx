@@ -23,6 +23,13 @@ const Confirmation = () => {
       });
 
       console.log(res);
+      if (res.ok) {
+        const result = await res.json();
+        router.push({
+          pathname: "/finish",
+          query: { data: JSON.stringify(result) },
+        });
+      }
     } catch (error) {
       console.error("Error during fetch:", error);
     }
