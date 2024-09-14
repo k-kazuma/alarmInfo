@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Header from "./Header";
 import { useRouter } from "next/router";
 import Link from "next/link";
@@ -7,6 +7,8 @@ const Confirmation = () => {
   const router = useRouter();
   const comment = router.query.comment;
   const content = router.query.content;
+  const [error, setError] = useState(false);
+  const [errorCount, setErrorCount] = useState(0);
 
   const submit = async () => {
     console.log("click");
@@ -32,6 +34,8 @@ const Confirmation = () => {
       }
     } catch (error) {
       console.error("Error during fetch:", error);
+      setError(true);
+      setErrorCount(errorCount + 1);
     }
   };
 
@@ -40,6 +44,22 @@ const Confirmation = () => {
       <Header />
       <div className="h-screen flex justify-center items-center">
         <div className="w-10/12">
+          {error ? (
+            <p className="my-5 text-rose-700	">
+              {errorCount > 1 ? (
+                <p>
+                  {`繰り返しエラーが発生する場合は時間を空けて操作をお願いします。エラー回数：` +
+                    errorCount}
+                </p>
+              ) : (
+                <p>
+                  エラーが発生し送信ができませんでした。再度送信ボタンを押してください。
+                </p>
+              )}
+            </p>
+          ) : (
+            ""
+          )}
           <div className="bg-slate-600 p-5">
             <p className="border-b-2">問合せ内容：{content}</p>
             <div className="my-3">
