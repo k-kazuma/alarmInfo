@@ -23,9 +23,19 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div>
-          <Link href="/inquiry">問合せフォームへ</Link>
-          <Link>メールで問合せ</Link>
+        <div className="mt-5">
+          <Link
+            href="/inquiry"
+            className="w-5/6 block mx-auto button ml-auto py-2.5 px-4 text-xs font-medium text-center rounded-lg mb-2"
+          >
+            問合せフォーム
+          </Link>
+          <Link
+            href="mailto:alarm.scheduler@gmail.com"
+            className="w-5/6 block mx-auto button ml-auto py-2.5 px-4 text-xs font-medium text-center rounded-lg"
+          >
+            メールで問合せ
+          </Link>
         </div>
         <Footer />
       </div>
