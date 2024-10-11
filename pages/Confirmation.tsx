@@ -3,7 +3,7 @@ import Header from "./Header";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-const Confirmation = () => {
+const confirmation = () => {
   const router = useRouter();
   const comment = router.query.comment;
   const content = router.query.content;
@@ -87,4 +87,4 @@ const Confirmation = () => {
   );
 };
 
-export default Confirmation;
+export default confirmation;
