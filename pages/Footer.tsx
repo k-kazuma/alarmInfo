@@ -7,7 +7,7 @@ function Footer() {
       <Link href={"/privacypolicy"} type="submit" className="text-slate-400">
         プライバシーポリシー
       </Link>
-      <p className="text-center">2024.kazumakumagai</p>
+      <p className="text-center">&copy;KazumaKumagai.2024</p>
     </div>
   );
 }
