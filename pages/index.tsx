@@ -45,6 +45,9 @@ export default function Home() {
             メールで問合せ
           </Link>
         </div>
+        <p className="p-1 text-sm opacity-70">
+          ※お問い合わせいただいた内容への返信は行っておりません。お送りいただいた内容をもとに今後のサービス改善へ努めます。
+        </p>
         <Footer />
       </div>
     </div>
