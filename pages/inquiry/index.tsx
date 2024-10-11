@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Header from "./Header";
-import Footer from "./Footer";
+import Header from "../Header";
+import Footer from "../Footer";
 import Link from "next/link";
 
 const postAction = (e: any, comment: String, content: String) => {
