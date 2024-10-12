@@ -8,7 +8,7 @@ const postAction = (e: any, comment: String, content: String) => {
   console.log(comment, content);
 };
 
-function inquiry() {
+function Inquiry() {
   const [comment, setComment] = useState("");
   const [content, setContent] = useState("選択してください");
   const contents = [
@@ -60,7 +60,7 @@ function inquiry() {
             <div className="flex items-center px-3 py-2 border-t">
               <Link
                 href={{
-                  pathname: `/confirmation`,
+                  pathname: `inquiry/confirmation`,
                   query: {
                     comment: comment,
                     content: content,
@@ -87,4 +87,4 @@ function inquiry() {
   );
 }
 
-export default inquiry;
+export default Inquiry;
