@@ -40,7 +40,7 @@ const policyData = [
   },
 ];
 
-function privacypolicy() {
+function Privacypolicy() {
   return (
     <>
       <Header />
@@ -62,4 +62,4 @@ function privacypolicy() {
   );
 }
 
-export default privacypolicy;
+export default Privacypolicy;

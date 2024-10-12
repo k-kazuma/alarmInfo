@@ -3,7 +3,7 @@ import Header from "../../Header";
 import { useRouter } from "next/router";
 import Link from "next/link";
 
-function confirmation() {
+function Confirmation() {
   const router = useRouter();
   const comment = router.query.comment;
   const content = router.query.content;
@@ -28,7 +28,7 @@ function confirmation() {
       if (res.ok) {
         const result = await res.json();
         router.push({
-          pathname: "/finish",
+          pathname: "inquiry/confirmation/finish",
           query: { data: JSON.stringify(result) },
         });
       }
@@ -87,4 +87,4 @@ function confirmation() {
   );
 }
 
-export default confirmation;
+export default Confirmation;

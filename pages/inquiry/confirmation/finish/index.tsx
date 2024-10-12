@@ -3,7 +3,7 @@ import React from "react";
 import Link from "next/link";
 import Header from "@/pages/Header";
 
-function finish() {
+function Finish() {
   return (
     <>
       <div className="p-1 w-screen h-screen overflow-hidden">
@@ -32,4 +32,4 @@ function finish() {
   );
 }
 
-export default finish;
+export default Finish;
