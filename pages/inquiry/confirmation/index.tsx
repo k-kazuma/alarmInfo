@@ -15,8 +15,10 @@ function Confirmation() {
     console.log(comment);
     console.log(content);
 
+    const apiUrl = process.env.BACKEND_URL;
+
     try {
-      const res = await fetch("http://127.0.0.1:5000/post/", {
+      const res = await fetch(`${apiUrl}/post/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
