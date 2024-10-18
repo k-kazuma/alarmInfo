@@ -16,6 +16,7 @@ function Confirmation() {
     console.log(content);
 
     const apiUrl = process.env.BACKEND_URL;
+    console.log(apiUrl);
 
     try {
       const res = await fetch(`${apiUrl}/post/`, {
