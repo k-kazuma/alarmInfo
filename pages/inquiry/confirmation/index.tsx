@@ -31,7 +31,7 @@ function Confirmation() {
       if (res.ok) {
         const result = await res.json();
         router.push({
-          pathname: "inquiry/confirmation/finish",
+          pathname: "confirmation/finish",
           query: { data: JSON.stringify(result) },
         });
       }
