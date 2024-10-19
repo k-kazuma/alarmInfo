@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, Suspense } from "react";
 import Header from "../../Header";
 import { useRouter } from "next/router";
 import Link from "next/link";
+import Loading from "@/pages/loading";
 
 function Confirmation() {
   const router = useRouter();
@@ -45,47 +46,49 @@ function Confirmation() {
   return (
     <div className="max-h-screen h-screen overflow-hidden">
       <Header />
-      <div className="h-screen flex justify-center items-center">
-        <div className="w-10/12">
-          {error ? (
-            <p className="my-5 text-rose-700	">
-              {errorCount > 1 ? (
-                <p>
-                  {`繰り返しエラーが発生する場合は時間を空けて操作をお願いします。エラー回数：` +
-                    errorCount}
-                </p>
-              ) : (
-                <p>
-                  エラーが発生し送信ができませんでした。再度送信ボタンを押してください。
-                </p>
-              )}
-            </p>
-          ) : (
-            ""
-          )}
-          <div className="bg-slate-600 p-5">
-            <p className="border-b-2">問合せ内容：{content}</p>
-            <div className="my-3">
-              <p>本文：</p>
-              <p>{comment}</p>
+      <Suspense fallback={<Loading />}>
+        <div className="h-screen flex justify-center items-center">
+          <div className="w-10/12">
+            {error ? (
+              <p className="my-5 text-rose-700	">
+                {errorCount > 1 ? (
+                  <p>
+                    {`繰り返しエラーが発生する場合は時間を空けて操作をお願いします。エラー回数：` +
+                      errorCount}
+                  </p>
+                ) : (
+                  <p>
+                    エラーが発生し送信ができませんでした。再度送信ボタンを押してください。
+                  </p>
+                )}
+              </p>
+            ) : (
+              ""
+            )}
+            <div className="bg-slate-600 p-5">
+              <p className="border-b-2">問合せ内容：{content}</p>
+              <div className="my-3">
+                <p>本文：</p>
+                <p>{comment}</p>
+              </div>
+            </div>
+            <div className="flex flex-col">
+              <button
+                className="mt-10 mb-2 button items-center py-2.5 px-4 text-xs font-medium text-center rounded-lg"
+                onClick={submit}
+              >
+                送信する
+              </button>
+              <Link
+                href="/"
+                className="mb-2 backbutton items-center py-2.5 px-4 text-xs font-medium text-center rounded-lg"
+              >
+                戻る
+              </Link>
             </div>
           </div>
-          <div className="flex flex-col">
-            <button
-              className="mt-10 mb-2 button items-center py-2.5 px-4 text-xs font-medium text-center rounded-lg"
-              onClick={submit}
-            >
-              送信する
-            </button>
-            <Link
-              href="/"
-              className="mb-2 backbutton items-center py-2.5 px-4 text-xs font-medium text-center rounded-lg"
-            >
-              戻る
-            </Link>
-          </div>
         </div>
-      </div>
+      </Suspense>
     </div>
   );
 }
