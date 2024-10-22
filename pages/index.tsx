@@ -12,7 +12,7 @@ export default function Home() {
     <div className="max-h-screen overflow-hidden">
       <div className="h-screen">
         <Header />
-        <div className="flex justify-around mt-10">
+        <div className="flex justify-around mt-10 max-w-80 mx-auto">
           <Image src="/image.png" width={100} height={100} alt="appIcon" />
           <div>
             <h1 className="mt-2">AlarmScheduler</h1>
@@ -23,7 +23,7 @@ export default function Home() {
             </button>
           </div>
         </div>
-        <div className="my-8 p-2">
+        <div className="my-8 p-2 max-w-80 mx-auto">
           <p className="p-1">
             アラームの日時管理に特化した軽量アラームアプリです。
           </p>
@@ -31,7 +31,7 @@ export default function Home() {
             繰り返し設定中アラームのスキップ機能や、カレンダーUIでのアラーム設置が可能です。
           </p>
         </div>
-        <div className="mt-8">
+        <div className="mt-8 max-w-96 mx-auto">
           <Link
             href="/inquiry"
             className="w-5/6 backbutton block mx-auto ml-auto py-3 px-4 text-xs font-medium text-center rounded-lg mb-4"
@@ -44,11 +44,11 @@ export default function Home() {
           >
             メールで問合せ
           </Link>
+          <p className="p-1 text-sm opacity-70 max-w-80 mx-auto">
+            ※お問い合わせいただいた内容への返信は行っておりません。お送りいただいた内容をもとに今後のサービス改善へ努めます。
+          </p>
+          <Footer />
         </div>
-        <p className="p-1 text-sm opacity-70">
-          ※お問い合わせいただいた内容への返信は行っておりません。お送りいただいた内容をもとに今後のサービス改善へ努めます。
-        </p>
-        <Footer />
       </div>
     </div>
   );

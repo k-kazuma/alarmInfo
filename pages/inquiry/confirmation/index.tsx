@@ -51,7 +51,7 @@ function Confirmation() {
   ) : (
     <div className="max-h-screen h-screen overflow-hidden">
       <Header />
-      <div className="h-screen flex justify-center items-center">
+      <div className="h-screen flex justify-center items-center max-w-96 mx-auto">
         <div className="w-10/12">
           {error ? (
             <p className="my-5 text-rose-700	">
