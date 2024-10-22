@@ -25,8 +25,8 @@ function Inquiry() {
   return (
     <div className="max-h-screen overflow-hidden">
       <Header />
-      <div className="h-screen">
-        <div className="text-center mt-5 mx-auto">
+      <div className="h-screen max-w-96 mx-auto">
+        <div className="text-center mt-5 max-w-80 mx-auto">
           <h2>【ご意見・ご要望】</h2>
           <p className="p-4">
             当アプリの不具合や、機能の追加、改修希望される内容など下記フォームより送信してください。

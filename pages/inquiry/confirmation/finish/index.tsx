@@ -6,7 +6,7 @@ import Header from "@/pages/Header";
 function Finish() {
   return (
     <>
-      <div className="p-1 w-screen h-screen overflow-hidden">
+      <div className="p-1 w-screen h-screen overflow-hidden max-w-80 mx-auto">
         <Header />
         <h2 className="mt-10 text-center">問合せありがとうございます。</h2>
         <div className="p-2 h-4/5 flex justify-center items-center">
