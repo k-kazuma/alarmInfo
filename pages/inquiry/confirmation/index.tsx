@@ -38,6 +38,10 @@ function Confirmation() {
           pathname: "confirmation/finish",
           query: { data: JSON.stringify(result) },
         });
+      } else {
+        console.error("Error during fetch:", error);
+        setError(true);
+        setErrorCount(errorCount + 1);
       }
     } catch (error) {
       console.error("Error during fetch:", error);
@@ -49,9 +53,9 @@ function Confirmation() {
   return loading ? (
     <Loading />
   ) : (
-    <div className="max-h-screen h-screen overflow-hidden">
+    <div className="max-h-screen h-screen">
       <Header />
-      <div className="h-screen flex justify-center items-center max-w-96 mx-auto">
+      <div className="min-h-screen flex justify-center items-center max-w-96 mx-auto mt-5">
         <div className="w-10/12">
           {error ? (
             <p className="my-5 text-rose-700	">
@@ -69,11 +73,11 @@ function Confirmation() {
           ) : (
             ""
           )}
-          <div className="bg-slate-600 p-5">
+          <div className="bg-slate-600 p-5 break-all block">
             <p className="border-b-2">問合せ内容：{content}</p>
             <div className="my-3">
               <p>本文：</p>
-              <p>{comment}</p>
+              <p className="">{comment}</p>
             </div>
           </div>
           <div className="flex flex-col">
