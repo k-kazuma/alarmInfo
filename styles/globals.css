@@ -39,7 +39,8 @@ select {
   background-color: rgb(69 69 69);
 }
 
-textarea {
+textarea,
+input {
   background-color: rgb(122 122 122);
 }
 
