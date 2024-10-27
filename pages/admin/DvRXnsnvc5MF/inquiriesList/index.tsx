@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 
-function index() {
+function Admin() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
   const [inquiriesList, setInquiriesList] = useState<object>({});
 
@@ -25,4 +25,4 @@ function index() {
   return <div>index</div>;
 }
 
-export default index;
+export default Admin;
