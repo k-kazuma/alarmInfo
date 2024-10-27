@@ -2,7 +2,7 @@ import Header from "@/pages/Header";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
 
-function index() {
+function Login() {
   const [idText, setIdText] = useState("");
   const [pwText, setPwText] = useState("");
   const router = useRouter();
@@ -47,6 +47,6 @@ function index() {
   );
 }
 
-export default index;
+export default Login;
 
 // [{"comment": "hihihihhiuh", "content": "不具合", "created": "Sat, 26 Oct 2024 03:17:01 GMT", "id": 1}]
