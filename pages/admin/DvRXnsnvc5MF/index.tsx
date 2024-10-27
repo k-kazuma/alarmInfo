@@ -20,7 +20,7 @@ function Login() {
     //ここで認証を行い認証できた場合問い合わせ一覧へ遷移
 
     router.push({
-      pathname: "login/inquiriesList/",
+      pathname: "DvRXnsnvc5MF/inquiriesList/",
     });
   };
 
