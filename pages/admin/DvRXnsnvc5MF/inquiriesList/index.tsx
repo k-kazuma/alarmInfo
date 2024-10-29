@@ -15,7 +15,7 @@ function Admin() {
     } else {
       const data = await res.json();
       console.log("DBからの返り値res", res);
-      console.log("DBからの返り値data", res);
+      console.log("DBからの返り値data", data);
       return data;
     }
   };
