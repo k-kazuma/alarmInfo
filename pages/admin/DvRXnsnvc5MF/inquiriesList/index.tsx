@@ -14,8 +14,8 @@ function Admin() {
       throw new Error(`HTTP error! status: ${res.status}`);
     } else {
       const data = await res.json();
-      console.log("DBからの返り値res" + res);
-      console.log("DBからの返り値data" + res);
+      console.log("DBからの返り値res", res);
+      console.log("DBからの返り値data", res);
       return data;
     }
   };
