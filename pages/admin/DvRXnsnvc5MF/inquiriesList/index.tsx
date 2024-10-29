@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 
 function Admin() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const [inquiriesList, setInquiriesList] = useState<object>({});
+  const [inquiriesList, setInquiriesList] = useState<[object]>([{}]);
 
   const getInquiriesList = async () => {
     const res = await fetch(`${apiUrl}/`, {
@@ -21,10 +21,23 @@ function Admin() {
   };
 
   useEffect(() => {
-    setInquiriesList(getInquiriesList());
-    console.log(inquiriesList);
+    const fetchAndSetInquiriesList = async () => {
+      const list = await getInquiriesList();
+      setInquiriesList(list);
+    };
+    fetchAndSetInquiriesList();
   }, []);
-  return <div>index</div>;
+
+  return (
+    <>
+      <div>index</div>;
+      <div>
+        {inquiriesList.map((inquiry, index) => (
+          <div key={index}>{JSON.stringify(inquiry)}</div>
+        ))}
+      </div>
+    </>
+  );
 }
 
 export default Admin;
