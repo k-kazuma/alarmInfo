@@ -1,8 +1,17 @@
 import React, { useEffect, useState } from "react";
 
+type Inquiry = {
+  comment: string;
+  content: string;
+  created: string;
+  id: number;
+};
+
 function Admin() {
   const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-  const [inquiriesList, setInquiriesList] = useState<[object]>([{}]);
+  const [inquiriesList, setInquiriesList] = useState<[Inquiry]>([
+    { comment: "無し", content: "無し", created: "無し", id: 1 },
+  ]);
 
   const getInquiriesList = async () => {
     const res = await fetch(`${apiUrl}/`, {
@@ -30,12 +39,27 @@ function Admin() {
 
   return (
     <>
-      <div>index</div>;
-      <div>
-        {inquiriesList.map((inquiry, index) => (
-          <div key={index}>{JSON.stringify(inquiry)}</div>
-        ))}
-      </div>
+      <div>index</div>
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">id</th>
+            <th scope="col">content</th>
+            <th scope="col">comment</th>
+            <th scope="col">day</th>
+          </tr>
+        </thead>
+        <tbody>
+          {inquiriesList.map((inquiry, index) => (
+            <tr key={index}>
+              <td>{inquiry.id}</td>
+              <td>{inquiry.content}</td>
+              <td>{inquiry.comment}</td>
+              <td>{inquiry.created}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
