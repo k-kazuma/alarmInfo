@@ -1,3 +1,4 @@
+import Auth from "@/pages/components/auth";
 import React, { useEffect, useState } from "react";
 
 type Inquiry = {
@@ -38,7 +39,7 @@ function Admin() {
   }, []);
 
   return (
-    <>
+    <Auth>
       <div>index</div>
       <table>
         <thead>
@@ -60,7 +61,7 @@ function Admin() {
           ))}
         </tbody>
       </table>
-    </>
+    </Auth>
   );
 }
 

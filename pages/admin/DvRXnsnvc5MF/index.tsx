@@ -1,8 +1,11 @@
 import Header from "@/pages/Header";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import Cookies from "js-cookie";
 
 function Login() {
+  const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+  const cookieKey = process.env.COOKIE_KEY;
   const [idText, setIdText] = useState("");
   const [pwText, setPwText] = useState("");
   const router = useRouter();
@@ -15,13 +18,17 @@ function Login() {
     setPwText(event.target.value);
   };
 
-  const login = () => {
-    console.log(idText, pwText);
-    //ここで認証を行い認証できた場合問い合わせ一覧へ遷移
-
-    router.push({
-      pathname: "DvRXnsnvc5MF/inquiriesList/",
+  const login = async () => {
+    const res = await fetch(`${apiUrl}/admin/user/n/asdfghjkl11/`, {
+      method: "GET",
+      headers: {
+        id: idText,
+        pw: pwText,
+      },
     });
+
+    Cookies.set(`${cookieKey}`, `${res.text}`);
+    router.replace("DvRXnsnvc5MF/inquiriesList/");
   };
 
   return (
